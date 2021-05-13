@@ -1,2 +1,2 @@
 # BaekJoon_Java
-백준 java 문제풀이
+백준_java_문제풀이
