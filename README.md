@@ -3,11 +3,11 @@
 
 solving       << 풀이 중
 
-solved        << 풀이 완료
+solved        << 풀이 완료(처음부터 끝까지)
 
-solved not myself << 혼자 풀이x
+solved not myself << 혼자 풀이x(솔루션 참조)
 
-solved myself << 혼자 풀이완료
+solved myself << 혼자 풀이완료(솔루션 확인 후 백지에서 풀이)
 
 unsolved      << 현재미해결
 
