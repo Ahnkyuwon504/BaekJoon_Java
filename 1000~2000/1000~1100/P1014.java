@@ -1,4 +1,4 @@
-package baekjoon;
+﻿package baekjoon;
 
 import java.io.IOException;
 import java.io.BufferedReader;
@@ -49,11 +49,6 @@ public class P1014 {
 				}
 			}
 			
-			System.out.println("=====================================");
-			System.out.println(tc + "번째 케이스");
-			System.out.println("교실의 너비 : " + desksOfClassroom[0].length);
-			System.out.println("교실의 높이 : " + desksOfClassroom.length);
-			
 			getMaximumStudentNumber(desksOfClassroom, students);
 		}
 		
@@ -66,8 +61,7 @@ public class P1014 {
 			boolean[][] desksOfClassroom,
 			boolean[][] students) {
 		
-		int cnt1 = 0;
-		int cnt2 = 0;
+		int cnt = 0;
 		
 		System.out.println("========================================");
 		
@@ -94,47 +88,10 @@ public class P1014 {
 					if (able) {
 						students[height][width] = true;
 						cnt1++;
-						
-						System.out.println(width + ", " + height + " 위치한 학생은 처리 완료");
-						
-						
 					}
 				}
 			}
 		}
-		
-		for (int width = 2; width <= desksOfClassroom[0].length - 2; width++) {
-			for (int height = 1; height <= desksOfClassroom.length - 1; height++) {
-				
-				int currentX;
-				int currentY;
-				
-				boolean able = true;
-				
-				if (desksOfClassroom[height][width]) {
-					
-					for (int i = 0; i < 4; i++) {
-						
-						currentX = width + moveX[i];
-						currentY = height + moveY[i];
-						
-						if (students[currentY][currentX]) {
-							able = false;
-						}
-					}
-					
-					if (able) {
-						students[height][width] = true;
-						cnt2++;
-						
-						System.out.println(width + ", " + height + " 위치한 학생은 처리 완료");
-						
-						
-					}
-				}
-			}
-		}
-		
-		sb.append("cnt1 : " + cnt1 + " / cnt2 : " + cnt2).append("\n");
+		sb.append(cnt).append("\n");
 	}
 }
