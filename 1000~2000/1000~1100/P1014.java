@@ -63,8 +63,6 @@ public class P1014 {
 		
 		int cnt = 0;
 		
-		System.out.println("========================================");
-		
 		for (int width = 1; width <= desksOfClassroom[0].length - 2; width++) {
 			for (int height = 1; height <= desksOfClassroom.length - 1; height++) {
 				
@@ -87,7 +85,7 @@ public class P1014 {
 					
 					if (able) {
 						students[height][width] = true;
-						cnt1++;
+						cnt++;
 					}
 				}
 			}
