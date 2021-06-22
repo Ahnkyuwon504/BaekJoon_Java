@@ -43,20 +43,17 @@ public class P1027 {
         int result = 0;
         
         for (int buildingIndex = i-1; buildingIndex >= 1; buildingIndex--) {
+            int x = xOfBuildings[i] - xOfBuildings[buildingIndex];
+            int y = yOfBuildings[i] - yOfBuildings[buildingIndex];
             
             if (buildingIndex == (i - 1)) {
-                
-                tan = (yOfBuildings[i] - yOfBuildings[buildingIndex]) /
-                        -1 *(xOfBuildings[i] - xOfBuildings[buildingIndex]);
+                tan = y / -1 * x;
                 result++;
                 continue;
             }
             
-            if ((yOfBuildings[i] - yOfBuildings[buildingIndex]) / 
-                    -1 *(xOfBuildings[i] - xOfBuildings[buildingIndex]) > tan) {
-                
-                tan = (yOfBuildings[i] - yOfBuildings[buildingIndex]) / 
-                        -1 *(xOfBuildings[i] - xOfBuildings[buildingIndex]);
+            if (y / -1 * x > tan) {
+                tan = y / -1 * x; 
                 result++;
             }
         }
@@ -70,16 +67,17 @@ public class P1027 {
         int result = 0;
         
         for (int buildingIndex = i+1; buildingIndex <= howManyBuilding; buildingIndex++) {
+            int x = xOfBuildings[i] - xOfBuildings[buildingIndex];
+            int y = yOfBuildings[i] - yOfBuildings[buildingIndex];
             
             if (buildingIndex == (i + 1)) {
-                
-                tan = (yOfBuildings[i] - yOfBuildings[buildingIndex]) / (xOfBuildings[i] - xOfBuildings[buildingIndex]);
+                tan = y / x;
                 result++;
                 continue;
             }
             
-            if ((yOfBuildings[i] - yOfBuildings[buildingIndex]) / (xOfBuildings[i] - xOfBuildings[buildingIndex]) > tan) {
-                tan = (yOfBuildings[i] - yOfBuildings[buildingIndex]) / (-1);
+            if (y / x > tan) {
+                tan = y / x;
                 result++;
             }
         }
